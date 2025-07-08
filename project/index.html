@@ -3,41 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PRODUCTO</title>
     <link rel="stylesheet" href="./inex.css">
+    
 </head>
 <body>
-    <header><div>
-        <img width="100px" height="100px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRubtO8UPjWBhhMyjeatCpGSi2PYriuHE0iqA&s"></img></div>
-  <div> <h1>Producto</h1></div>
-</header>
-<div>
-<nav>
-<a href="home">HOME</a>
-<a href="Products">PRODUCTS</a>
-<a href="About">ABOUT</a>
-</nav>
-</div>
-<form>
-    <h2>product form</h2>
-    <input type="text" id="id" name="id" placeholder="Product Id">
-    <input type="text" id="name" name="name" placeholder="product name">
-    <input type="number" id="price" name="price" placeholder="price">
-    <input type="number" id="quantity" name="quantity" placeholder="Quantity">
-    <input type="button" id="addbtn" value="Add product">
-    <input type="button" id="disbtn" value="Display product">
-</form>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>actions</th>
-  </tr>
-  </table>
-   <footer>
-    <p>@2025producto lnc.</p>
-   </footer>
+    <header>
+        <div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRubtO8UPjWBhhMyjeatCpGSi2PYriuHE0iqA&s">
+        </div>
+        <div class="hname">
+            <h1>PRODUCTO</h1>
+        </div>
+    </header>
+    <div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">About</a>
+        </nav>
+    </div>
+    <main>
+        <section>
+            <h2>Product Form</h2>
+            <form action="javascript:void(0);">
+                <input type="text" id="PID" name="PID" placeholder="Product ID">
+                <input type="text" id="PName" name="PName" placeholder="Product Name">
+                <input type="number" id="Price" name="Price" placeholder="Price">
+                <input type="number" id="Quantity" name="Quantity" placeholder="Quantity">
+                <input type="button" value="Add Product" id="addBtn" onclick="addProducts()">
+                <input type="button" value="Display Products" id="disBtn">
+            </form>
+        </section><br><br><br>
+
+        <section>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="productTableBody">
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <span>&copy;2025 PRODUCTO Inc.</span>
+    </footer>
+    <script src="./index.js"></script>
 </body>
 </html>
