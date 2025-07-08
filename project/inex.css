@@ -1,0 +1,39 @@
+header{
+    background-color: black;
+    color: white;
+    display: flex;
+   
+
+}
+h1{
+    margin-left: 1000px;
+}
+nav{
+    background-color: gray;
+   
+}
+a{
+     text-decoration: none;
+     color: white;
+     margin:2px;
+     
+}
+footer{
+    text-align: center;
+    background-color: black;
+    color: white;
+    margin-top: 400px;
+}
+table{
+    border: 1px solid red;
+    width: 100%;
+    
+}
+th{
+    border: 1px solid red;
+        
+}
+form{
+    margin:10px ;
+    
+}
