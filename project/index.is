@@ -1,0 +1,68 @@
+let products = [];
+
+function addProducts() {
+    const id = document.getElementById('PID').value.trim();
+    const name = document.getElementById('PName').value.trim();
+    const price = document.getElementById('Price').value.trim();
+    const quantity = document.getElementById('Quantity').value.trim();
+
+    if (!id || !name || !price || !quantity) {
+        alert("Please fill all fields.");
+        return;
+    }
+
+    products.push({
+        id,
+        name,
+        price: parseFloat(price).toFixed(2),
+        quantity
+    });
+
+    displayProducts();
+    document.getElementById('PID').value = '';
+    document.getElementById('PName').value = '';
+    document.getElementById('Price').value = '';
+    document.getElementById('Quantity').value = '';
+}
+
+function displayProducts() {
+    const tbody = document.getElementById('productTableBody');
+    tbody.innerHTML = '';
+    products.forEach((product, index) => {
+        const row = `<tr>
+            <td>${product.id}</td>
+            <td>${product.name}</td>
+            <td>${product.price}</td>
+            <td>${product.quantity}</td>
+            <td>
+                <button onclick="updateProduct(${index})">Update</button>
+                <button onclick="deleteProduct(${index})">Delete</button>
+            </td>
+        </tr>`;
+        tbody.innerHTML += row;
+    });
+}
+
+function deleteProduct(index) {
+    products.splice(index, 1);
+    displayProducts();
+    alert("product is deleted");
+}
+
+function updateProduct(index) {
+    const product = products[index];
+    document.getElementById('PID').value = product.id;
+    document.getElementById('PName').value = product.name;
+    document.getElementById('Price').value = product.price;
+    document.getElementById('Quantity').value = product.quantity;
+    products.splice(index, 1);
+    displayProducts();
+}
+
+// Make functions available globally for inline onclick handlers
+window.addProducts = addProducts;
+window.displayProducts = displayProducts;
+window.deleteProduct = deleteProduct;
+window.updateProduct = updateProduct;
+
+document.getElementById('disBtn').onclick = displayProducts;
